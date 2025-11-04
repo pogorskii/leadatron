@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\DiscoveredVia;
-use App\LeadCategory;
-use App\LeadStatus;
+use App\Enums\DiscoveredVia;
+use App\Enums\LeadCategory;
+use App\Enums\LeadStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

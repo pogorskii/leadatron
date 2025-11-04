@@ -20,7 +20,7 @@ class LeadFactory extends Factory
 
         return [
             'name' => $companyName,
-            'category' => fake()->randomElement(\App\LeadCategory::cases()),
+            'category' => fake()->randomElement(\App\Enums\LeadCategory::cases()),
             'location' => fake()->city().', '.fake()->stateAbbr(),
             'email' => fake()->companyEmail(),
             'website_url' => fake()->optional(0.7)->url(),
@@ -30,8 +30,8 @@ class LeadFactory extends Factory
             'instagram_handle' => fake()->optional(0.5)->userName(),
             'instagram_followers' => fake()->optional(0.5)->numberBetween(100, 50000),
             'facebook_url' => fake()->optional(0.5)->url(),
-            'discovered_via' => fake()->optional(0.8)->randomElement(\App\DiscoveredVia::cases()),
-            'status' => fake()->randomElement(\App\LeadStatus::cases()),
+            'discovered_via' => fake()->optional(0.8)->randomElement(\App\Enums\DiscoveredVia::cases()),
+            'status' => fake()->randomElement(\App\Enums\LeadStatus::cases()),
         ];
     }
 }
