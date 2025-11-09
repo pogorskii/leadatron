@@ -96,7 +96,6 @@ export default function Login({
                                 Log in
                             </Button>
                         </div>
-
                     </>
                 )}
             </Form>
