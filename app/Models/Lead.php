@@ -42,12 +42,12 @@ class Lead extends Model
     protected function casts(): array
     {
         return [
-            'category'             => LeadCategoryEnum::class,
-            'discovered_via'       => DiscoveredViaEnum::class,
-            'status'               => LeadStatusEnum::class,
-            'google_rating'        => 'float',
+            'category' => LeadCategoryEnum::class,
+            'discovered_via' => DiscoveredViaEnum::class,
+            'status' => LeadStatusEnum::class,
+            'google_rating' => 'float',
             'google_reviews_count' => 'integer',
-            'instagram_followers'  => 'integer',
+            'instagram_followers' => 'integer',
         ];
     }
 }
