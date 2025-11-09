@@ -24,6 +24,7 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     { title: 'Leads', href: indexLeads.url(), icon: Folder },
+    { title: 'Find Leads', href: '/leads/find', icon: Folder },
 ];
 
 const footerNavItems: NavItem[] = [
