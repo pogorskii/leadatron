@@ -1,8 +1,13 @@
+import { DataTable } from '@/components/data-table';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { DataTable } from '@/components/data-table';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
 import { router } from '@inertiajs/react';
 import { format } from 'date-fns';
@@ -126,7 +131,9 @@ export default function LeadsIndex({
             key: 'name',
             header: 'Name',
             sortable: true,
-            render: (row: Lead) => <span className="font-medium">{row.name}</span>,
+            render: (row: Lead) => (
+                <span className="font-medium">{row.name}</span>
+            ),
         },
         {
             key: 'category',
@@ -145,7 +152,10 @@ export default function LeadsIndex({
             header: 'Email',
             sortable: true,
             render: (row: Lead) => (
-                <a href={`mailto:${row.email}`} className="text-blue-600 hover:underline dark:text-blue-400">
+                <a
+                    href={`mailto:${row.email}`}
+                    className="text-blue-600 hover:underline dark:text-blue-400"
+                >
                     {row.email}
                 </a>
             ),
@@ -165,9 +175,7 @@ export default function LeadsIndex({
             header: 'Google Rating',
             sortable: true,
             render: (row: Lead) =>
-                row.google_rating
-                    ? `${row.google_rating.toFixed(1)} ⭐`
-                    : '-',
+                row.google_rating ? `${row.google_rating.toFixed(1)} ⭐` : '-',
         },
         {
             key: 'created_at',
@@ -178,43 +186,50 @@ export default function LeadsIndex({
         },
     ];
 
-    const hasActiveFilters = filters.search || filters.status || filters.category;
+    const hasActiveFilters =
+        filters.search || filters.status || filters.category;
 
     const filterComponents = (
         <>
-            <Select
-                value={filters.category?.toString() || ''}
-                onValueChange={(value) => updateFilter('category', value || '')}
-            >
-                <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Category" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectItem value="">All Categories</SelectItem>
-                    {categoryOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value.toString()}>
-                            {option.label}
-                        </SelectItem>
-                    ))}
-                </SelectContent>
-            </Select>
+            {/*<Select*/}
+            {/*    value={filters.category?.toString() || ''}*/}
+            {/*    onValueChange={(value) => updateFilter('category', value || '')}*/}
+            {/*>*/}
+            {/*    <SelectTrigger className="w-[180px]">*/}
+            {/*        <SelectValue placeholder="Category" />*/}
+            {/*    </SelectTrigger>*/}
+            {/*    <SelectContent>*/}
+            {/*        <SelectItem value="all">All Categories</SelectItem>*/}
+            {/*        {categoryOptions.map((option) => (*/}
+            {/*            <SelectItem*/}
+            {/*                key={option.value}*/}
+            {/*                value={option.value.toString()}*/}
+            {/*            >*/}
+            {/*                {option.label}*/}
+            {/*            </SelectItem>*/}
+            {/*        ))}*/}
+            {/*    </SelectContent>*/}
+            {/*</Select>*/}
 
-            <Select
-                value={filters.status?.toString() || ''}
-                onValueChange={(value) => updateFilter('status', value || '')}
-            >
-                <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Status" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectItem value="">All Statuses</SelectItem>
-                    {statusOptions.map((option) => (
-                        <SelectItem key={option.value} value={option.value.toString()}>
-                            {option.label}
-                        </SelectItem>
-                    ))}
-                </SelectContent>
-            </Select>
+            {/*<Select*/}
+            {/*    value={filters.status?.toString() || ''}*/}
+            {/*    onValueChange={(value) => updateFilter('status', value || '')}*/}
+            {/*>*/}
+            {/*    <SelectTrigger className="w-[180px]">*/}
+            {/*        <SelectValue placeholder="Status" />*/}
+            {/*    </SelectTrigger>*/}
+            {/*    <SelectContent>*/}
+            {/*        <SelectItem value="">All Statuses</SelectItem>*/}
+            {/*        {statusOptions.map((option) => (*/}
+            {/*            <SelectItem*/}
+            {/*                key={option.value}*/}
+            {/*                value={option.value.toString()}*/}
+            {/*            >*/}
+            {/*                {option.label}*/}
+            {/*            </SelectItem>*/}
+            {/*        ))}*/}
+            {/*    </SelectContent>*/}
+            {/*</Select>*/}
 
             {hasActiveFilters && (
                 <Button
