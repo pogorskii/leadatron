@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum LeadCategory: int
+enum LeadCategoryEnum: int
 {
     case Restaurant = 1;
     case Cafe = 2;

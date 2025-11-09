@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum LeadStatus: int
+enum LeadStatusEnum: int
 {
     case New = 0;
     case Contacted = 1;

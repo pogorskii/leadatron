@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Enums\DiscoveredVia;
-use App\Enums\LeadCategory;
-use App\Enums\LeadStatus;
+use App\Enums\DiscoveredViaEnum;
+use App\Enums\LeadCategoryEnum;
+use App\Enums\LeadStatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,12 +42,12 @@ class Lead extends Model
     protected function casts(): array
     {
         return [
-            'category' => LeadCategory::class,
-            'discovered_via' => DiscoveredVia::class,
-            'status' => LeadStatus::class,
-            'google_rating' => 'float',
+            'category'             => LeadCategoryEnum::class,
+            'discovered_via'       => DiscoveredViaEnum::class,
+            'status'               => LeadStatusEnum::class,
+            'google_rating'        => 'float',
             'google_reviews_count' => 'integer',
-            'instagram_followers' => 'integer',
+            'instagram_followers'  => 'integer',
         ];
     }
 }

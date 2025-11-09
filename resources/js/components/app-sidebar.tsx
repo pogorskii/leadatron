@@ -1,3 +1,4 @@
+import { index as indexLeads } from '@/actions/App/Http/Controllers/LeadController';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
@@ -22,6 +23,7 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    { title: 'Leads', href: indexLeads.url(), icon: Folder },
 ];
 
 const footerNavItems: NavItem[] = [

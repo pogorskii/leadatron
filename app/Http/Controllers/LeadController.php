@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLeadRequest;
 use App\Http\Requests\UpdateLeadRequest;
+use App\Http\Resources\LeadResource;
 use App\Models\Lead;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class LeadController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): Response
     {
-        //
+        $leads = Lead::all();
+
+        return Inertia::render('leads/leads-index', ['leads' => LeadResource::collection($leads)->resolve()]);
     }
 
     /**

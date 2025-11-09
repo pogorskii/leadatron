@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum DiscoveredVia: int
+enum DiscoveredViaEnum: int
 {
     case GoogleMaps = 1;
     case Instagram = 2;
